@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recomendador</title>
+</head>
+<body>
+
+<h1>🎬 Recomendador</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="prompt" placeholder="Describe una película..." required>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if movie %}
+    <h2>Resultado:</h2>
+    <p><strong>{{ movie.title }}</strong></p>
+    <p>{{ movie.description }}</p>
+{% endif %}
+
+</body>
+</html>
