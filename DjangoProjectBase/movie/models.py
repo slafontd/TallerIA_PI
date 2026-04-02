@@ -8,7 +8,7 @@ def get_default_array():
 class Movie(models.Model): 
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1500) 
-    image = models.ImageField(upload_to='movie/images/', default = 'movie/images/default.jpg') 
+    image = models.ImageField(upload_to='movie/images/', null=True, blank=True)
     url = models.URLField(blank=True)
     genre = models.CharField(blank=True, max_length=250)
     year = models.IntegerField(blank=True, null=True)
